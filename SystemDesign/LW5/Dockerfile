@@ -9,7 +9,7 @@ COPY . .
 RUN pip install -r requirements.txt
 
 # Даем права на выполнение скрипта инициализации
-RUN chmod +x /app/init_mongo.py
+RUN chmod +x /app/LW4.py
 
 # Указываем переменную окружения для FastAPI
 ENV PYTHONUNBUFFERED=1
