@@ -19,7 +19,7 @@ COPY consumer.py /app/consumer.py
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Даем права на выполнение скрипта инициализации MongoDB
-RUN chmod +x /app/init_mongo.py
+RUN chmod +x /app/LW4.py
 
 # Устанавливаем переменную окружения для корректного вывода логов
 ENV PYTHONUNBUFFERED=1
@@ -28,4 +28,4 @@ ENV PYTHONUNBUFFERED=1
 EXPOSE 8000
 
 # Используем wait-for-it для ожидания Kafka перед запуском приложения
-CMD ["bash", "-c", "wait-for-it kafka:9092 -- python /app/init_mongo.py && uvicorn main:app --host 0.0.0.0 --port 8000"]
+CMD ["bash", "-c", "wait-for-it kafka:9092 -- python /app/LW4.py && uvicorn main:app --host 0.0.0.0 --port 8000"]
