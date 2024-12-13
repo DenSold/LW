@@ -16,7 +16,7 @@ services:
       - REDIS_URL=redis://redis:6379
     ports:
       - "8000:8000"
-    command: bash -c "python /app/init_mongo.py && uvicorn main:app --host 0.0.0.0 --port 8000"
+    command: bash -c "python /app/LW4.py && uvicorn main:app --host 0.0.0.0 --port 8000"
 
   postgres:
     image: postgres:14.13-alpine3.20
